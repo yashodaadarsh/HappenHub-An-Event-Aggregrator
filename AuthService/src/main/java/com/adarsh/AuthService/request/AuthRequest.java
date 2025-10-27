@@ -1,5 +1,6 @@
 package com.adarsh.AuthService.request;
 
+import com.adarsh.AuthService.enums.Interest;
 import com.adarsh.AuthService.enums.PreferenceType;
 import lombok.Data;
 
@@ -13,5 +14,6 @@ public class AuthRequest {
     private String lastName;
     private Long phoneNumber;
     private String address;
+    private List<Interest> interests;
     private List<PreferenceType> preferences;
 }

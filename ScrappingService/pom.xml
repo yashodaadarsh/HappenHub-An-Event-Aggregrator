@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.webscrap</groupId>
-	<artifactId>scrapping</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>scrapping_service</artifactId>
+	<version>v1-8081</version>
 	<name>scrapping</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -30,6 +30,16 @@
 		<java.version>21</java.version>
 	</properties>
 	<dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.kafka</groupId>

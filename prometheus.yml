@@ -1,0 +1,40 @@
+global:
+  # How frequently Prometheus will scrape targets by default.
+  scrape_interval: 15s 
+  # How long to wait for a scrape request to complete.
+  scrape_timeout: 10s 
+  # Attach these labels to all time series scraped from all jobs.
+  external_labels:
+    monitor: 'happenhub-monitor' 
+
+# A list of rule files to load.
+# This is required if you want to set up alerting rules.
+rule_files:
+  # - "alert.rules" 
+
+# The list of configurations for scraping targets.
+scrape_configs:
+  # 1. Scrape Prometheus itself
+  - job_name: 'prometheus'
+    # Use the global scrape interval and timeout
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # 2. Scrape Spring Boot Microservices
+  - job_name: 'happenhub-services'
+    metrics_path: '/actuator/prometheus'
+    # Use the service names defined in docker-compose, not host IP addresses.
+    # Since all services are on the 'arpanet' network, you must use their service names.
+    static_configs:
+      - targets: ['10.255.76.247:8080']
+      - targets: ['10.255.76.247:8081']
+      - targets: ['10.255.76.247:8083']
+      # The targets here should be the service name:port, assuming you've given your 
+      # microservice containers unique service names like 'auth-service', 'user-service', etc.
+      # If all your services are on the same port, you MUST give them different service names.
+
+  # 3. Scrape Kafka Exporter
+  - job_name: 'kafka'
+    static_configs:
+      # Use the service name defined in docker-compose.
+      - targets: ['kafka-exporter:9308']

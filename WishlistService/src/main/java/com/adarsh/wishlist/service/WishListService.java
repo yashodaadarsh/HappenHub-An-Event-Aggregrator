@@ -72,7 +72,8 @@ public class WishListService {
         List<Event> events = userWishlist.getEvents();
         List<Long> eventsIdList = events.stream().map(Event::getId).collect(Collectors.toList());
         System.out.println(eventsIdList);
-        return eventServiceClient.getEventsByIds(eventsIdList);
+        List<EventModel> ans =  eventServiceClient.getEventsByIds(eventsIdList);
+        return ans;
     }
 
 }

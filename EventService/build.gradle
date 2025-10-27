@@ -9,8 +9,8 @@ repositories {
     mavenCentral()
 }
 
-group = 'com.adarsh.userservice'
-version = '0.0.1-SNAPSHOT'
+group = 'com.adarsh.eventservice'
+version = 'v1.0.1-8082'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -21,7 +21,7 @@ java {
     }
 }
 application {
-    mainClass = 'com.adarsh.userservice.UserserviceApplication'
+    mainClass = 'org.adarsh.Main'
 }
 repositories {
     mavenCentral()

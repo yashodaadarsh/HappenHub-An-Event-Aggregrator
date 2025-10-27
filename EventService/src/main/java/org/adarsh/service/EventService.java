@@ -97,7 +97,10 @@ public class EventService
     }
 
     public List<EventModel> findByIds(List<Long> eventsIdList) {
-        List<Event> events = eventRepository.findAllById(eventsIdList);
+        List<Event> events = new ArrayList<>();
+        for (Long id : eventsIdList) {
+            eventRepository.findByEventId(id).ifPresent(events::add);
+        }
         List<EventModel> eventModels = new ArrayList<>();
         for( Event event : events ){
             eventModels.add(convertToEventModel(event));

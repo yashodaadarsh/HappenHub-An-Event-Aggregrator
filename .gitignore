@@ -267,3 +267,6 @@ DsService/HELP.md
 DsService/denv
 DsService/dist
 DsService/src/.env
+
+#frontend
+HappenHub_FrontEnd/node_modules

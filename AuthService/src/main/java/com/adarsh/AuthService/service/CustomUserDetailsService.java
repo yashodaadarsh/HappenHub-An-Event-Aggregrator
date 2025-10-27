@@ -8,6 +8,7 @@ import com.adarsh.AuthService.request.AuthRequest;
 import com.adarsh.AuthService.response.AuthResponse;
 import com.adarsh.AuthService.response.UserDetailsDTO;
 import com.adarsh.AuthService.util.JWTUtil;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,6 +24,9 @@ import java.util.Optional;
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
+    private UserMetricsService userMetricsService;
+
+    @Autowired
     private UserDetailsRepository userDetailsRepository;
 
     @Autowired
@@ -33,6 +37,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserDataProducer userDataProducer;
+
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -64,6 +69,9 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         UserDataModel userDataModel = convertToUserDataModel(savedUser);
         userDataProducer.sendEventToKafka(userDataModel);
+
+        authRequest.getInterests().forEach(userMetricsService::incrementInterest);
+        authRequest.getPreferences().forEach(userMetricsService::incrementPreference);
 
         return AuthResponse.builder()
                 .email(savedUser.getEmail())
@@ -139,6 +147,9 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         UserDataModel userDataModel = convertToUserDataModel(savedUser);
         userDataProducer.sendEventToKafka(userDataModel);
+
+        authRequest.getInterests().forEach(userMetricsService::incrementInterest);
+        authRequest.getPreferences().forEach(userMetricsService::incrementPreference);
 
         return UserDetailsDTO.builder()
                 .email(savedUser.getEmail())

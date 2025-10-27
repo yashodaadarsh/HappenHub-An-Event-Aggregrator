@@ -8,9 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @RestController
 @RequestMapping("recommendation-service/api/v1/events")
+@CrossOrigin(origins = "*")
 public class RecommendationController { 
 
     @Autowired

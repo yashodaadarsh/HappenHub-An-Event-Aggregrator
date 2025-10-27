@@ -1,5 +1,6 @@
 package com.adarsh.AuthService.entity;
 
+import com.adarsh.AuthService.enums.Interest;
 import com.adarsh.AuthService.enums.PreferenceType;
 import jakarta.persistence.*; // Note the import for @ElementCollection
 import lombok.AllArgsConstructor;
@@ -32,6 +33,10 @@ public class User implements UserDetails {
     @ElementCollection
     @Enumerated(EnumType.STRING)
     private List<PreferenceType> preferences;
+
+    @ElementCollection
+    @Enumerated(EnumType.STRING)
+    private List<Interest> interests;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

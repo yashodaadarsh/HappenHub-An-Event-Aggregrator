@@ -55,7 +55,6 @@ public class ScrapingService {
         List<EventModel> hackthons = devpostScrapper.scrapWebPage();
         for (EventModel event : hackthons ) {
             long eventId = generateUniqueEventId();
-
             event.setEventId(eventId);
             eventProducer.sendEventToKafka(event);
         }

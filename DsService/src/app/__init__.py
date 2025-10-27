@@ -41,16 +41,16 @@ def consume_and_produce():
     print(f"Listening to Kafka topic: {consume_topic} ...")
     for message in consumer:
         event = message.value
-        print(f"Received event: {event} \n\n")
+        print(f"\nReceived event: {event} \n\n")
         try:
             # Process the event
             result = eventService.process_event(event)
-            print(f"Processed event: {result}\n\n")
+            print(f"\nProcessed event: {result}\n\n")
 
             # Produce to another topic
             producer.send(produce_topic, result)
             producer.flush()  # ensure it's sent
-            print(f"Sent processed event to topic {produce_topic}\n\n")
+            print(f"\nSent processed event to topic {produce_topic}\n\n")
         except Exception as e:
             print(f"Error processing event: {e}")
 
@@ -62,4 +62,4 @@ def handle_get():
     return "Kafka Consumer-Producer Service Running"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8091, debug=False)
+    app.run(host="0.0.0.0", port=8085, debug=False)

@@ -3,6 +3,7 @@ package com.adarsh.AuthService.controller;
 import com.adarsh.AuthService.request.AuthRequest;
 import com.adarsh.AuthService.response.UserDetailsDTO;
 import com.adarsh.AuthService.service.CustomUserDetailsService;
+import com.adarsh.AuthService.util.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("auth-service/api/v1")
+@CrossOrigin(origins = "*")
 public class AuthController {
 
     @Autowired
@@ -24,6 +26,9 @@ public class AuthController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private JWTUtil jwtUtil;
 
 
     @PostMapping("/signup")
@@ -68,17 +73,17 @@ public class AuthController {
         return ResponseEntity.ok(updatedUser);
     }
 
-    @GetMapping("/ping")
-    public ResponseEntity<?> ping(){
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+    @GetMapping("/ping/{token}")
+    public ResponseEntity<?> ping(@PathVariable String token ){
 
-        if (authentication == null || !authentication.isAuthenticated()) {
+        String email = jwtUtil.extractUsername(token);
+
+        if ( email == null ) {
             return ResponseEntity.status(401).body("Not authenticated");
         }
 
-        String username = authentication.getName();
 
-        Map<String, String> responseBody = Collections.singletonMap("email", username);
+        Map<String, String> responseBody = Collections.singletonMap("email", email);
 
         return ResponseEntity.ok().body(responseBody);
     }

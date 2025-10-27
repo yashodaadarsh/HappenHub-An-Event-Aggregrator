@@ -20,6 +20,7 @@ public class ScheduledScrapingTask {
 
     // Cron expression: At 00:00:00 (midnight) every day
     @Scheduled(cron = "0 0 0 * * *")
+//    @Scheduled(fixedRate = 10000)
     public void runDailyScraping() {
         try {
             // Scrape Internshala Jobs

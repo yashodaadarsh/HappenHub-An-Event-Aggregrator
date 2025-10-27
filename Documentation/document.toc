@@ -1,0 +1,97 @@
+\contentsline {chapter}{ACKNOWLEDGEMENT}{5}{chapter*.1}%
+\contentsline {chapter}{ABSTRACT}{6}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Introduction}{13}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Overview}{13}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Objectives}{15}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Scope}{16}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Significance}{17}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Methodology}{17}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Review of Literature}{18}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Review of Related Work}{18}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Multilingual chatbots for agricultural assistance}{18}{subsection.2.1.1}%
+\contentsline {paragraph}{Summary:}{18}{section*.6}%
+\contentsline {paragraph}{Key Findings:}{19}{section*.7}%
+\contentsline {paragraph}{Relevance to AgriSphere:}{19}{section*.8}%
+\contentsline {subsection}{\numberline {2.1.2}AI-driven plant disease diagnosis}{19}{subsection.2.1.2}%
+\contentsline {paragraph}{Summary:}{19}{section*.9}%
+\contentsline {paragraph}{Key Findings:}{19}{section*.10}%
+\contentsline {paragraph}{Relevance to AgriSphere:}{20}{section*.11}%
+\contentsline {subsection}{\numberline {2.1.3}Farmers' awareness of digital agricultural schemes in Telangana}{20}{subsection.2.1.3}%
+\contentsline {paragraph}{Summary:}{20}{section*.12}%
+\contentsline {paragraph}{Key Findings:}{20}{section*.13}%
+\contentsline {paragraph}{Relevance to AgriSphere:}{21}{section*.14}%
+\contentsline {section}{\numberline {2.2}Conclusion of Review}{21}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Existing Solutions}{22}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Kisan Suvidha}{22}{section.3.1}%
+\contentsline {paragraph}{Overview:}{22}{section*.15}%
+\contentsline {paragraph}{Features:}{22}{section*.16}%
+\contentsline {paragraph}{Limitations:}{23}{section*.17}%
+\contentsline {section}{\numberline {3.2}Electronic National Agriculture Market (eNAM)}{23}{section.3.2}%
+\contentsline {paragraph}{Overview:}{23}{section*.18}%
+\contentsline {paragraph}{Features:}{23}{section*.19}%
+\contentsline {paragraph}{Limitations:}{23}{section*.20}%
+\contentsline {section}{\numberline {3.3}Digital India Agriculture Initiatives}{23}{section.3.3}%
+\contentsline {paragraph}{Overview:}{23}{section*.21}%
+\contentsline {paragraph}{Features:}{24}{section*.22}%
+\contentsline {paragraph}{Limitations:}{24}{section*.23}%
+\contentsline {section}{\numberline {3.4}AI/ML Research in Agriculture}{24}{section.3.4}%
+\contentsline {paragraph}{Overview:}{24}{section*.24}%
+\contentsline {paragraph}{Examples:}{24}{section*.25}%
+\contentsline {paragraph}{Limitations:}{24}{section*.26}%
+\contentsline {section}{\numberline {3.5}Proposed System: AgriSphere}{25}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Advantages of AgriSphere}{26}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Voice interaction and usability}{26}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Integrated data hub}{26}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Cloud-based and scalable}{26}{subsection.3.6.3}%
+\contentsline {section}{\numberline {3.7}Comparative Analysis}{26}{section.3.7}%
+\contentsline {section}{\numberline {3.8}Conclusion}{26}{section.3.8}%
+\contentsline {chapter}{\numberline {4}System Analysis}{28}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Problem Definition}{28}{section.4.1}%
+\contentsline {section}{\numberline {4.2}System Requirements}{29}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Functional requirements}{29}{subsection.4.2.1}%
+\contentsline {paragraph}{User Registration and Authentication:}{29}{section*.27}%
+\contentsline {paragraph}{Weather Forecasting:}{29}{section*.28}%
+\contentsline {paragraph}{Mandi Price Integration:}{29}{section*.29}%
+\contentsline {paragraph}{Government Schemes Portal:}{30}{section*.30}%
+\contentsline {paragraph}{Cooperative Sales and Finance Ledger:}{30}{section*.31}%
+\contentsline {paragraph}{Voice Recognition and Speech Assistance:}{30}{section*.32}%
+\contentsline {paragraph}{Admin Panel:}{30}{section*.33}%
+\contentsline {subsection}{\numberline {4.2.2}Non-functional requirements}{30}{subsection.4.2.2}%
+\contentsline {paragraph}{Usability:}{30}{section*.34}%
+\contentsline {paragraph}{Reliability:}{30}{section*.35}%
+\contentsline {paragraph}{Performance:}{30}{section*.36}%
+\contentsline {paragraph}{Security:}{31}{section*.37}%
+\contentsline {paragraph}{Maintainability:}{31}{section*.38}%
+\contentsline {subsection}{\numberline {4.2.3}Software requirements}{31}{subsection.4.2.3}%
+\contentsline {paragraph}{Operating System:}{31}{section*.39}%
+\contentsline {paragraph}{Frontend Framework:}{31}{section*.40}%
+\contentsline {paragraph}{Backend (Serverless):}{32}{section*.41}%
+\contentsline {paragraph}{Database:}{32}{section*.42}%
+\contentsline {paragraph}{Third-Party APIs:}{33}{section*.43}%
+\contentsline {paragraph}{Development Tools:}{33}{section*.44}%
+\contentsline {paragraph}{Hosting:}{34}{section*.45}%
+\contentsline {subsection}{\numberline {4.2.4}Hardware requirements}{34}{subsection.4.2.4}%
+\contentsline {paragraph}{Development Environment:}{34}{section*.46}%
+\contentsline {paragraph}{End-User (Client-Side) Environment:}{35}{section*.47}%
+\contentsline {paragraph}{Network Requirements:}{35}{section*.48}%
+\contentsline {paragraph}{Peripherals:}{36}{section*.49}%
+\contentsline {section}{\numberline {4.3}Feasibility Study}{36}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Technical feasibility}{36}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Economic feasibility}{37}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Operational feasibility}{37}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}System Objectives and Constraints}{37}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}System objectives}{37}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Constraints and dependencies}{38}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Conclusion}{39}{section.4.5}%
+\contentsline {chapter}{\numberline {5}System Design}{40}{chapter.5}%
+\contentsline {section}{\numberline {5.1}System Architecture}{40}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Presentation layer (frontend UI)}{40}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Application logic layer (middleware)}{41}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Database layer (backend storage)}{41}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}External services layer (APIs)}{41}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}System architecture diagram}{41}{subsection.5.1.5}%
+\contentsline {paragraph}{Description:}{41}{section*.50}%
+\contentsline {chapter}{\numberline {6}Conclusions and Future Works}{43}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Conclusions}{43}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Future Works}{43}{section.6.2}%
+\contentsline {chapter}{References}{45}{chapter*.51}%

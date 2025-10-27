@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name = "scrapping", url = "http://localhost:8082/event-service/api/v1/events") // replace with your service URL
+@FeignClient( name = "EventService" , url = "http://localhost:8082/event-service/api/v1/events") // replace with your service URL
 public interface EventServiceClient {
 
     @GetMapping("/{id}")

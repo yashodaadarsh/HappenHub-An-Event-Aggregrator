@@ -22,7 +22,8 @@ public class NotifyService {
     private final EventServiceClient eventServiceClient;
     private final NotificationSender notificationSender;
 
-    @Scheduled(cron = "0 0 0 * * *")
+//    @Scheduled(cron = "0 0 0 * * *")
+    @Scheduled(cron = "*/10 * * * * *") // 10s
     public void notifyExpiringEvents() {
         List<UserWishlist> allWishlists = wishListRepository.findAll();
 

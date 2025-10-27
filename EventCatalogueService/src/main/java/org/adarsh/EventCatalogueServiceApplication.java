@@ -1,0 +1,15 @@
+package org.adarsh;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.kafka.annotation.EnableKafka;
+
+@SpringBootApplication
+@EnableKafka
+public class EventCatalogueServiceApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(EventCatalogueServiceApplication.class, args);
+    }
+
+}

@@ -1,0 +1,999 @@
+\documentclass[12pt, a4paper]{report}
+
+% === PACKAGE IMPORTS ===
+\usepackage[utf8]{inputenc} % Handle UTF-8 text encoding
+\usepackage[T1]{fontenc}    % Use modern font encodings
+%\usepackage{newtxtext, newtxmath} % Use Times New Roman font (COMMENTED OUT TO FIX ERROR)
+
+% Margins: 1.5" Left, 1" Top/Bottom/Right
+\usepackage[left=1.5in, top=1in, bottom=1in, right=1in]{geometry} 
+
+\usepackage{graphicx}     % To include images
+\usepackage{array}        % For advanced table column formatting
+\usepackage{amssymb}      % For checkmarks (✓) and crosses (✗)
+\usepackage{setspace}     % For 1.5 line spacing
+\usepackage{fancyhdr}     % For page numbering
+%\usepackage{titlesec}     % To control heading font sizes (COMMENTED OUT TO FIX ERROR)
+
+% Paragraph formatting: No indent, space between
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+% Font size for headings: Chapter=16pt, Section/Subsection=14pt (COMMENTED OUT TO FIX ERROR)
+%\titleformat{\chapter}[display]
+%  {\normalfont\bfseries\fontsize{16}{19}\selectfont\centering}{\chaptertitlename\ \thechapter}{1em}{}
+%\titleformat{\chapter*}[display]
+%  {\normalfont\bfseries\fontsize{16}{19}\selectfont\centering}{}{0em}{}
+%\titleformat{\section}
+%  {\normalfont\bfseries\fontsize{14}{17}\selectfont}{\thesection}{1em}{}
+%\titleformat{\subsection}
+%  {\normalfont\bfseries\fontsize{14}{17}\selectfont}{\thesubsection}{1em}{}
+
+
+% Setup hyperref (MUST be loaded last)
+\usepackage{hyperref}     % For clickable links (good practice)
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={AGRISPHERE Project Report},
+	pdfauthor={Chittuluri Naveen & Nelluri Dolendra Sai Teja},
+}
+
+% === DOCUMENT START ===
+\begin{document}
+	
+	% Set 1.5 line spacing for the whole document
+	\onehalfspacing
+	
+	% Page numbering: Centered at bottom for ALL pages
+	\pagestyle{fancy}
+	\fancyhf{} % clear all header and footer fields
+	\cfoot{\thepage} % center footer
+	\renewcommand{\headrulewidth}{0pt} % no header rule
+	\fancypagestyle{plain}{%
+		\fancyhf{}%
+		\cfoot{\thepage}%
+	}
+	
+	
+	% === TITLE PAGE 1 (TOP PAGE / HARD COVER) --- Annex-1 ===
+	\begin{titlepage}
+		\centering
+		\vfill % Space at top
+		
+		% Title at 18pt bold
+		{\fontsize{18}{22}\selectfont \textbf{AGRISPHERE}}
+		
+		\vspace{1.5cm}
+		
+		{\fontsize{14}{18}\selectfont A PROJECT REPORT}
+		
+		\vspace{1.5cm}
+		
+		{\fontsize{14}{18}\selectfont \textit{Submitted by}}
+		
+		\vspace{0.5cm}
+		
+		{\fontsize{14}{18}\selectfont
+			\textbf{Chittuluri Naveen – B211515} \\
+			\textbf{Nelluri Dolendra Sai Teja – B210212}
+		}
+		
+		\vspace{1.5cm}
+		
+		{\fontsize{14}{18}\selectfont \textit{Of}} \\
+		{\fontsize{16}{20}\selectfont Bachelor of Technology}
+		
+		\vspace{1.5cm}
+		
+		{\fontsize{14}{18}\selectfont \textit{Under the guidance of}}
+		
+		\vspace{0.5cm}
+		
+		{\fontsize{14}{18}\selectfont
+			\textbf{Mr. Rahul (M.Tech)} \\
+			Asst.Professor
+		}
+		
+		\vfill % Middle space
+		
+		\includegraphics[width=0.4\textwidth]{rgukt_logo.png}
+		
+		\vspace{1cm}
+		
+		{\fontsize{14}{18}\selectfont \textbf{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}} \\
+		\vspace{0.5cm}
+		{\fontsize{14}{18}\selectfont \textbf{RAJIV GANDHI UNIVERSITY OF KNOWLEDGE TECHNOLOGIES}} \\
+		\vspace{0.5cm}
+		{\fontsize{14}{18}\selectfont \textbf{BASAR, NIRMAL (DIST.),}} \\
+		{\fontsize{14}{18}\selectfont \textbf{TELANGANA – 504107}}
+		
+		\vfill % Space at bottom
+	\end{titlepage}
+	
+	% === TITLE PAGE 2 (COVER PAGE / INTERNAL) --- Annex-2 ===
+	\begin{titlepage}
+		\centering
+		\vfill % Space at top
+		
+		% Title at 16pt bold
+		{\fontsize{16}{20}\selectfont \textbf{AGRISPHERE}}
+		
+		\vspace{2cm}
+		
+		{\textit{Project Report submitted to}} \\
+		{\textit{Rajiv Gandhi University of Knowledge Technologies, Basar}} \\
+		\vspace{0.5cm}
+		{\textit{for the partial fulfillment of the requirements}} \\
+		{\textit{for the award of the degree of}}
+		
+		\vspace{1cm}
+		
+		{\fontsize{14}{18}\selectfont \textbf{Bachelor of Technology}} \\
+		\vspace{0.5cm}
+		{\fontsize{14}{18}\selectfont \textit{in}} \\
+		\vspace{0.5cm}
+		{\fontsize{14}{18}\selectfont \textbf{Computer Science \& Engineering}}
+		
+		\vspace{2cm}
+		
+		{\textit{by}}
+		
+		\vspace{0.5cm}
+		
+		{\fontsize{14}{18}\selectfont
+			\textbf{Chittuluri Naveen – B211515} \\
+			\textbf{Nelluri Dolendra Sai Teja – B210212}
+		}
+		
+		\vspace{2cm}
+		
+		{\textit{Under the Guidance of}}
+		
+		\vspace{0.5cm}
+		
+		{\fontsize{12}{16}\selectfont
+			\textbf{Mr.Rahul} \\
+			Assistant Professor
+		}
+		
+		\vfill % Middle space
+		
+		\includegraphics[width=0.4\textwidth]{rgukt_logo.png}
+		
+		\vspace{1cm}
+		
+		{\fontsize{14}{18}\selectfont \textbf{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}} \\
+		\vspace{0.5cm}
+		{\fontsize{14}{18}\selectfont \textbf{RAJIV GANDHI UNIVERSITY OF KNOWLEDGE TECHNOLOGIES}} \\
+		\vspace{0.5cm}
+		{\fontsize{14}{18}\selectfont \textbf{BASAR, NIRMAL (DIST)}}
+		
+		\vspace{2cm}
+		
+		{\fontsize{14}{18}\selectfont \textbf{OCTOBER 2025}} % Date updated
+		
+		\vfill % Space at bottom
+	\end{titlepage}
+	
+	% === CERTIFICATE PAGE --- Annex-3 ===
+	\newpage
+	% Page number should be 'i'
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{rgukt_logo.png} \\
+		\vspace{0.5cm}
+		{\large \textbf{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}} \\
+		\textbf{RAJIV GANDHI UNIVERSITY OF KNOWLEDGE TECHNOLOGIES, BASAR} \\
+		\vspace{2cm}
+		{\Large \textbf{CERTIFICATE}}
+	\end{center}
+	
+	\vspace{1.5cm}
+	
+	This is to certify that the Project Report entitled \textbf{'AGRISPHERE'} submitted by \textbf{Chittuluri Naveen ( B211515 )} and \textbf{Nelluri Dolendra Sai Teja ( B210212 )}, Department of Computer Science and Engineering, Rajiv Gandhi University Of Knowledge Technologies, Basar;
+	for partial fulfillment of the requirements for the degree of Bachelor of Technology in Computer Science and Engineering;
+	is a bonafide record of the work and investigations carried out by him/her/them under my supervision and guidance.
+	
+	\vspace{4cm}
+	
+	% Signatures
+	\noindent
+	\begin{minipage}{0.45\textwidth}
+		\textbf{PROJECT SUPERVISOR} \\
+		\vspace{2cm} % Space for signature
+		Mr.RAHUL \\
+		Assistant Professor
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\textwidth}
+		\raggedleft
+		\textbf{HEAD OF DEPARTMENT} \\
+		\vspace{2cm} % Space for signature
+		Mr.VENKATA RAMANA \\
+		Assistant Professor
+	\end{minipage}
+	
+	\vspace{4cm}
+	
+	\begin{center}
+		\textbf{EXTERNAL EXAMINER}
+	\end{center}
+	
+	\clearpage
+	
+	% === DECLARATION PAGE --- Annex-4 ===
+	\newpage
+	% Page number should be 'ii'
+	\begin{center}
+		\includegraphics[width=0.3\textwidth]{rgukt_logo.png} \\
+		\vspace{0.5cm}
+		{\large \textbf{DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}} \\
+		\textbf{RAJIV GANDHI UNIVERSITY OF KNOWLEDGE TECHNOLOGIES, BASAR} \\
+		\vspace{2cm}
+		{\Large \textbf{DECLARATION}}
+	\end{center}
+	
+	\vspace{1.5cm}
+	
+	I/We hereby declare that the work which is being presented in this project entitled, \textbf{"AGRISPHERE"} submitted to RAJIV GANDHI UNIVERSITY OF KNOWLEDGE TECHNOLOGIES, BASAR in the partial fulfillment of the requirements for the award of the degree of BACHELOR OF TECHNOLOGY in COMPUTER SCIENCE AND ENGINEERING, is an authentic record of my/our own work carried out under the supervision of \textbf{"Mr.RAHUL"}, Assistant Professor in Department of Computer Science and Engineering, RGUKT, Basar.
+	
+	\vspace{1cm}
+	The matter embodied in this project report has not been submitted by me/us for the award of any other degree.
+	
+	\vspace{4cm}
+	
+	\noindent
+	\begin{minipage}{0.45\textwidth}
+		Place : Basar \\
+		Date : 24-10-2025
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.45\textwidth}
+		\raggedleft
+		\textbf{Chittuluri Naveen (B211515)} \\
+		\textbf{Nelluri Dolendra Sai Teja (B210212)}
+	\end{minipage}
+	
+	\clearpage
+	
+	% === ACKNOWLEDGEMENT ===
+	\chapter*{ACKNOWLEDGEMENT}
+	\addcontentsline{toc}{chapter}{ACKNOWLEDGEMENT}
+	
+	We express our sincere gratitude to Rajiv Gandhi University of Knowledge Technologies, Basar for providing the opportunity and resources to carry out this project.We are thankful to our project supervisor, Mr.RAHUL, for his valuable guidance,constructive feedback, and continuous support throughout this project.
+	
+	Our thanks also extend to the Head of the Department, Mr. VENKAT RAMANA,and all faculty members of the Department of Computer Science and Engineering for their encouragement and assistance.
+	
+	Finally, we would like to thank our family and friends for their unwavering support and motivation during this endeavor.
+	
+	\vspace{3cm}
+	
+	\begin{flushright}
+		\textbf{Chittuluri Naveen – B211515} \\
+		\textbf{Nelluri Dolendra Sai Teja - B210212}
+	\end{flushright}
+	
+	\clearpage
+	
+	% === ABSTRACT ===
+	\chapter*{ABSTRACT}
+	\addcontentsline{toc}{chapter}{ABSTRACT}
+	
+	In recent years, the agricultural sector has witnessed a significant transformation driven by advancements in digital technologies and artificial intelligence. Despite this progress, farmers, especially in rural areas, still face challenges in accessing timely information, government schemes, weather forecasts, and market prices due to the lack of user-friendly digital tools. The AgriSphere platform is developed as an intelligent, multilingual, and voice-interactive web-based system aimed at empowering farmers through digital connectivity, accessibility, and automation.
+	
+	AgriSphere integrates multiple agricultural resources under a single unified interface. The system utilizes React.js for the frontend, Firebase for secure authentication and cloud-based real-time database management, and Google Speech \& Translation APIs for multilingual communication and speech recognition. Farmers can interact with the platform using natural voice commands in their preferred languages such as Telugu or English. Through this, they can access live weather forecasts, mandi price updates, financial ledger details, cooperative sales tracking, and government scheme information in an intuitive and personalized manner.
+	
+	The application features separate administrative and user roles to maintain data integrity and control. Administrators can add, update, or delete schemes, manage cooperative records, and monitor system performance. Farmers can explore agricultural data, receive alerts, and use voice-based input to simplify interactions. The integration of AI-driven speech and translation modules ensures inclusivity for users with limited digital literacy.
+	
+	AgriSphere not only promotes transparency and efficiency in agricultural processes but also bridges the communication gap between the government and farmers. It enables farmers to make informed decisions, enhances productivity, and contributes toward sustainable agriculture. The platform’s modular design ensures scalability, allowing future integration of IoT devices, crop health monitoring, and predictive analytics.
+	
+	In summary, AgriSphere serves as a comprehensive digital assistant for the farming community, fostering innovation, accessibility, and empowerment in the agri-tech ecosystem.
+	
+	\vspace{1cm}
+	\noindent
+	\textbf{Keywords:} Agri-tech, Multilingual, Voice-interactive, React.js, Firebase, Digital Empowerment
+	
+	\clearpage
+	
+	% === TABLE OF CONTENTS ===
+	\tableofcontents
+	\clearpage
+	
+	% === LIST OF FIGURES ===
+	\listoffigures
+	\clearpage
+	
+	% === LIST OF TABLES ===
+	\listoftables
+	\clearpage
+	
+	% === CHAPTER 1: INTRODUCTION ===
+	\chapter{Introduction}
+	
+	\section{Overview}
+	Agriculture is the backbone of many economies, providing food security, employment, and raw materials for various industries. However, farmers, particularly in developing regions, face numerous challenges such as unpredictable weather, limited access to government schemes, fluctuating market prices, and a lack of timely information. With the advent of modern technologies like Artificial Intelligence (AI), Internet of Things (IoT), and Cloud Computing, these challenges can be effectively mitigated through digital solutions.
+	
+	The AgriSphere platform has been developed as an all-in-one web-application to assist farmers by providing real-time access to agricultural data, weather information, and government initiatives. This system bridges the gap between traditional farming practices and digital agriculture by integrating speech, translation, and data visualization capabilities into a single interactive interface.
+	
+	AgriSphere enables farmers to:
+	\begin{itemize}
+		\item Obtain accurate weather forecasts for their region.
+		\item Get updates about government schemes and subsidies.
+		\item Track market prices (mandi data) in real-time.
+		\item Maintain cooperative and financial records digitally.
+		\item Communicate with the system using voice in native languages.
+	\end{itemize}
+	
+	The goal of AgriSphere is to simplify the digital experience for farmers, especially those with limited technical literacy, through natural voice interaction, multi-language support, and AI-powered insights.
+	
+	Agriculture in India faces numerous problems due to information gaps and lack of technology adoption. Farmers often depend on outdated or word-of-mouth information regarding weather, market prices, or schemes. This leads to uninformed decisions such as incorrect crop selection, mistimed sowing, or missed subsidy opportunities.
+	
+	\begin{enumerate}
+		\item \textbf{Information Fragmentation:} Weather, mandi prices, and scheme details are available on separate portals, making navigation cumbersome.
+		\item \textbf{Language Barriers:} Most data is available in English, which becomes difficult for rural farmers to understand.
+		\item \textbf{Limited Awareness:} Farmers are often unaware of government welfare or subsidy schemes that could benefit them.
+		\item \textbf{Manual Record Keeping:} Traditional methods of storing data lead to inefficiency and data loss.
+		\item \textbf{Poor Digital Literacy:} Farmers struggle with complex app interfaces and prefer natural voice-based interactions.
+	\end{enumerate}
+	
+	AgriSphere addresses these issues through a centralized, voice-assisted, multilingual platform that merges all necessary agricultural data into one place.
+	
+	The motivation behind the project arises from observing the communication and information gaps between government institutions and rural farmers. Many government programs remain underutilized due to limited awareness and accessibility barriers. Our team envisioned a holistic agricultural ecosystem where:
+	\begin{itemize}
+		\item Farmers could talk to the system instead of typing.
+		\item Data is delivered instantly and accurately.
+		\item The interface is as simple as possible.
+		\item The system evolves to include predictive analytics and AI insights in the future.
+	\end{itemize}
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.9\textwidth]{bar_graph.png}
+		% Caption in Sentence case, with a period at the end
+		\caption{Bar graph showing number of publication per year.}
+		\label{fig:bar_graph}
+	\end{figure}
+	
+	Agricultural industry is making considerable progress in the context of the implementation of digital technologies, but the pace is still slow as compared to other domains such as healthcare, manufacturing, mining, automotive, energy, etc.
+	
+	\section{Objectives}
+	The main objectives of the AgriSphere system are as follows:
+	\begin{itemize}
+		\item To develop a centralized digital platform that integrates agricultural data, weather, and government schemes.
+		\item To implement voice-based interaction using Google Speech Recognition and Translation APIs to make the system accessible to all.
+		\item To provide real-time weather forecasting using OpenWeatherMap APIs and geolocation data.
+		\item To design a user-friendly interface using React.js for ease of navigation and accessibility.
+		\item To ensure secure and scalable data storage through Firebase Authentication and Firestore Database.
+		\item To create separate roles for users and administrators, maintaining data control and integrity.
+		\item To empower farmers by making digital resources accessible in their local language.
+		\item To make the platform scalable for future features like soil testing, AI crop recommendation, and IoT sensor integration.
+	\end{itemize}
+	
+	\begin{table}[h!]
+		\centering
+		% Caption in Sentence case, no period
+		\caption{Technologies used for objectives}
+		\label{tab:tech}
+		% Table with vertical and horizontal lines
+		\begin{tabular}{|l|l|} 
+			\hline
+			\textbf{Objective} & \textbf{Technology Used} \\
+			\hline
+			Real-time Weather Data & OpenWeatherMap API \\
+			Voice Interaction & Google Speech API \\
+			Language Translation & Google Translate API \\
+			Authentication \& Database & Firebase \\
+			UI Development & React.js \\
+			Admin Management & Firebase Auth Role-based Access \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\section{Scope}
+	The scope of AgriSphere covers multiple functionalities, targeting both farmers and administrators, and addressing the information and accessibility challenges in the agriculture sector.
+	\begin{itemize}
+		\item Farmers’ Dashboard: Displays weather, mandi prices, and schemes.
+		\item Weather Module: Provides current and next 7-day forecasts based on location.
+		\item Mandi Prices Module: Displays real-time commodity rates for major districts.
+		\item Government Schemes Module: Lists welfare schemes with eligibility and benefits.
+		\item Voice Interaction: Farmers can use a mic to input or request data.
+		\item Language Toggle: Content can be viewed in Telugu or English.
+		\item Admin Access: Admin can add, modify, or delete schemes.
+		\item Responsive design for mobile and desktop users.
+		\item Fast and secure Firebase backend.
+		\item Automatic translation for non-native speakers.
+		\item Error handling for speech and network failures.
+		\item Scalable for adding new modules in the future.
+	\end{itemize}
+	
+	\section{Significance}
+	The AgriSphere platform is a significant step towards rural digitization and inclusive technology. It ensures that every farmer, regardless of education or technical skill, can benefit from technology.
+	\begin{itemize}
+		\item \textbf{Empowerment of Farmers:} Provides information in native languages with voice assistance.
+		\item \textbf{Bridging the Digital Divide:} Makes digital agriculture accessible even in remote regions.
+		\item \textbf{Efficiency in Decision-Making:} Real-time data enables better farming practices.
+		\item \textbf{Support for Government Initiatives:} Helps achieve ``Digital India'' and ``Smart Agriculture'' visions.
+		\item \textbf{Data Transparency:} Farmers can make informed decisions on pricing and crop selection.
+		\item \textbf{Ease of Communication:} Reduces dependency on intermediaries or manual data sources.
+	\end{itemize}
+	
+	\section{Methodology}
+	The development methodology follows the Agile Model, where iterative development cycles were carried out. Each module -- such as weather, mandi prices, schemes, and authentication -- was designed, implemented, and tested individually before integration.
+	\begin{enumerate}
+		\item Requirement Analysis – Identifying user needs and data sources.
+		\item System Design – Creating architecture, database schema, and API workflows.
+		\item Module Development – Implementing frontend and backend features.
+		\item Integration \& Testing – Connecting modules and verifying performance.
+		\item Deployment – Hosting on Firebase for real-time access.
+		\item Maintenance \& Feedback – Continuous updates based on farmer input.
+	\end{enumerate}
+	
+	\clearpage
+	
+	% === CHAPTER 2: REVIEW OF LITERATURE ===
+	\chapter{Review of Literature}
+	
+	\section{Review of Related Work}
+	This section presents a detailed review of research studies and literature relevant to AgriSphere. These works provide insights into the integration of IoT, cloud computing, artificial intelligence, and language technologies in agriculture. They also emphasize the importance of information accessibility for farmers. Each reviewed study contributes to the conceptual foundation and future development scope of AgriSphere.
+	
+	% Sub-section heading in Sentence case
+	\subsection{Multilingual chatbots for agricultural assistance}
+	\textbf{Authors:} Kumar \& Patel (2021) \cite{kumar2021} \\
+	\textbf{Publication:} Journal of Natural Language Processing and Applications
+	
+	\paragraph{Summary:}
+	Kumar and Patel proposed a multilingual chatbot system tailored for agricultural information dissemination. The chatbot leverages Natural Language Processing (NLP) to understand user queries in various regional Indian languages such as Hindi, Tamil, Telugu, and Marathi. The system integrates Google’s Translation API and a knowledge base containing agricultural best practices, pest control methods, and crop-specific guidelines. The module was designed to assist farmers who often face difficulties understanding English-language resources. Using speech-to-text and text-to-speech modules, it enabled voice-based interaction, making it accessible even for illiterate or semi-literate users.
+	
+	\paragraph{Key Findings:}
+	\begin{itemize}
+		\item Multilingual NLP can bridge the communication gap between technology and rural farmers.
+		\item Voice-enabled interfaces increase user engagement and accessibility.
+	\end{itemize}
+	
+	\paragraph{Relevance to AgriSphere:}
+	This research reinforces AgriSphere’s concept of integrating voice assistance and translation features to ensure inclusivity for farmers across linguistic backgrounds. By incorporating similar NLP-driven modules, AgriSphere can improve user interaction, enabling farmers to ask queries in their native language and receive real-time, region-specific guidance. This approach supports the vision of digital inclusiveness in agriculture.
+	
+	% Sub-section heading in Sentence case
+	\subsection{AI-driven plant disease diagnosis}
+	\textbf{Authors:} Mehta, R., \& Banerjee, S. (2021) \cite{mehta2021} \\
+	\textbf{Publication:} Journal of Agricultural Informatics and Intelligent Systems
+	
+	\paragraph{Summary:}
+	This research focuses on the use of artificial intelligence (AI) and image processing techniques to diagnose plant diseases automatically by analyzing images of crop leaves. The study proposed a system that captures leaf images using mobile or IoT-connected cameras and applies Convolutional Neural Networks (CNNs) to detect early signs of diseases such as blight, rust, and mildew. The workflow of the system included several stages -- image acquisition, pre-processing, featwure extraction, classification, and result prediction. Image pre-processing involved filtering and contrast enhancement to remove noise and highlight disease spots. Feature extraction captured color, texture, and shape patterns that differentiate healthy and infected leaves. The CNN model was trained using a dataset containing thousands of labeled leaf images across multiple crops such as rice, maize, tomato, and cotton. The researchers achieved over 95\% accuracy in identifying disease categories and suggested that such AI models could be integrated into mobile applications to help farmers identify diseases in real time without needing expert intervention.
+	
+	\paragraph{Key Findings:}
+	\begin{itemize}
+		\item Image-based AI systems can accurately identify crop diseases at an early stage.
+		\item CNN-based models outperform traditional manual inspection methods.
+		\item Cloud or mobile integration enables real-time, on-field diagnosis.
+		\item Early disease detection helps reduce crop loss and improve yield.
+	\end{itemize}
+	
+	\paragraph{Relevance to AgriSphere:}
+	This research is highly relevant to the future expansion of AgriSphere. A ``Crop Diagnosis'' module can be introduced, allowing farmers to upload photos of affected plants and receive instant disease detection and recommended remedies.
+	
+	% Sub-section heading in Sentence case
+	\subsection{Farmers' awareness of digital agricultural schemes in Telangana}
+	\textbf{Authors:} P. Ashwini (2022) \cite{ashwini2022} \\
+	\textbf{Publication:} CAB International Digital Library – Journal of Agricultural Extension
+	
+	\paragraph{Summary:}
+	This study assessed farmers’ awareness of digital agricultural schemes across multiple districts in Telangana. It focused on programs aimed at improving productivity, income, and access to government subsidies. The research identified the key role of digital platforms in spreading information about agricultural schemes and analyzed factors influencing awareness, including literacy, access to smartphones, and participation in extension programs.
+	
+	\paragraph{Key Findings:}
+	\begin{itemize}
+		\item Farmers with access to smartphones and digital platforms had higher awareness of schemes.
+		\item Awareness varied significantly across districts depending on local outreach efforts.
+		\item Socio-economic factors, such as education and farm size, influenced awareness levels.
+	\end{itemize}
+	
+	\paragraph{Relevance to AgriSphere:}
+	The study justifies integrating a dedicated Telangana schemes module within AgriSphere. By providing scheme information in regional languages, the platform can bridge the information gap and improve participation among local farmers.
+	
+	\section{Conclusion of Review}
+	The reviewed studies \cite{kumar2021, mehta2021, ashwini2022} collectively demonstrate how modern technologies -- including IoT, NLP, machine learning, and cloud computing -- can be integrated into agriculture to create smarter, data-driven, and more accessible solutions. AgriSphere builds upon these foundations by combining information accessibility, multilingual support, and future scope for intelligent analytics, positioning itself as a next-generation digital assistant for the agricultural ecosystem.
+	
+	\clearpage
+	
+	% === CHAPTER 3: INTERMEDIATE CHAPTERS ===
+	\chapter{Existing Solutions}
+	The purpose of this chapter is to review the existing agricultural information systems, mobile and web-based applications, and technological frameworks that aim to assist farmers in making informed decisions. A detailed literature survey provides the foundation for understanding existing approaches, their limitations, and the areas where AgriSphere provides enhancements. The research includes studies and projects that integrate weather forecasting, market price analysis, government scheme information, and the use of artificial intelligence (AI) and natural language processing (NLP) in agricultural contexts. The comparative analysis helps to highlight the technological gap addressed by AgriSphere.
+	
+	\section{Kisan Suvidha}
+	\paragraph{Overview:}
+	Kisan Suvidha is a government-launched mobile application that provides weather information, market prices, and pest alerts. It aims to empower farmers with timely and location-specific information.
+	\paragraph{Features:}
+	\begin{itemize}
+		\item Real-time weather updates and warnings.
+		\item Market price trends for selected crops.
+		\item Information on pesticide usage and advisories.
+		\item Available in 12 regional languages.
+	\end{itemize}
+	\paragraph{Limitations:}
+	\begin{itemize}
+		\item No integrated voice command feature.
+		\item Limited interactivity; text-based interface only.
+		\item Data not updated consistently for all regions.
+		\item Lacks support for automatic translation or AI-based insights.
+	\end{itemize}
+	
+	\section{Electronic National Agriculture Market (eNAM)}
+	\paragraph{Overview:}
+	The Electronic National Agriculture Market (eNAM) is an online trading platform for agricultural commodities in India. It connects existing Agricultural Produce Market Committee (APMC) mandis to create a unified national market for agricultural commodities.
+	\paragraph{Features:}
+	\begin{itemize}
+		\item Online trading of commodities.
+		\item Unified licensing for traders.
+		\item Transparent price discovery mechanism.
+	\end{itemize}
+	\paragraph{Limitations:}
+	\begin{itemize}
+		\item Focuses only on trading, not on information dissemination.
+		\item Complex interface unsuitable for small-scale farmers.
+		\item Requires high-speed internet connectivity.
+		\item Does not offer local language or voice-based access.
+	\end{itemize}
+	
+	\section{Digital India Agriculture Initiatives}
+	\paragraph{Overview:}
+	A central initiative by the Government of India under the Digital India mission to promote digital solutions in agriculture.
+	\paragraph{Features:}
+	\begin{itemize}
+		\item Uses AI, IoT, and GIS technologies.
+		\item Collects farm-level data for analytics.
+		\item Connects various databases for centralized decision-making.
+	\end{itemize}
+	\paragraph{Limitations:}
+	\begin{itemize}
+		\item Still under development in many states.
+		\item Data access restricted to officials and researchers.
+		\item Does not offer personalized data for individual farmers.
+	\end{itemize}
+	
+	\section{AI/ML Research in Agriculture}
+	\paragraph{Overview:}
+	Recent academic research has focused on the integration of AI and Machine Learning (ML) to predict crop yields, detect diseases, and analyze soil health.
+	\paragraph{Examples:}
+	\begin{itemize}
+		\item Predictive crop modeling using TensorFlow.
+		\item Voice-based chatbot systems for farm query resolution.
+		\item Smart irrigation systems using IoT sensors.
+	\end{itemize}
+	\paragraph{Limitations:}
+	\begin{itemize}
+		\item High cost and technical complexity.
+		\item Often limited to research or pilot-level implementations.
+		\item Lack of multilingual, large-scale deployment.
+	\end{itemize}
+	
+	\section{Proposed System: AgriSphere}
+	The proposed system, AgriSphere, is an intelligent, bilingual (Telugu \& English) web-application that integrates agricultural, financial, and informational services for farmers into a single, unified platform.Unlike existing fragmented applications, AgriSphere focuses on accessibility, automation, and usability, leveraging cloud services and voice-based interaction to ensure that even rural users with limited digital literacy can benefit from modern technology.
+	
+	\begin{table}[h!]
+		\centering
+		% Caption in Sentence case, no period
+		\caption{Features of the proposed AgriSphere system}
+		\label{tab:features}
+		% Table with vertical and horizontal lines
+		\begin{tabular}{|c|l|p{8cm}|}
+			\hline
+			\textbf{S.No} & \textbf{Feature} & \textbf{Description} \\
+			\hline
+			1 & Voice Assistant Integration & Farmers can interact using Telugu or English speech input for ease of use. Speech recognition and text-to-speech are enabled via Google Speech APIs. \\
+			\hline
+			2 & Bilingual Interface & Every module, including government schemes, weather, and mandi prices, is accessible in both Telugu and English. \\
+			\hline
+			3 & Government Schemes Portal & Displays updated central and state-level schemes with detailed eligibility, benefits, and application links. \\
+			\hline
+			4 & Weather Forecasting & Real-time weather and temperature updates for local regions using OpenWeather API. \\
+			\hline
+			5 & Mandi (Market) Price Display & Fetches dynamic crop price data from government APIs and displays region-wise mandi rates. \\
+			\hline
+			6 & Finance Ledger and Cooperative Sales & Enables farmers to track daily sales, cooperative transactions, and income–expense analysis. \\
+			\hline
+			7 & Firebase-Based Authentication & Secure login, user role management (Admin/Farmer), and data storage handled via Firebase Authentication and Firestore. \\
+			\hline
+			8 & Admin Control & Administrators can add, modify, or delete government schemes and monitor database records. \\
+			\hline
+			9 & Offline Data Sync (Future Enhancement) & Future version will cache essential data (weather, schemes) for offline accessibility in rural areas. \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\section{Advantages of AgriSphere}
+	% Sub-section heading in Sentence case
+	\subsection{Voice interaction and usability}
+	The application provides easy accessibility by letting farmers use Telugu voice commands and receive native language feedback. This focus on voice-interaction and a simple, user-friendly UI helps bridge the digital gap for all farmers.
+	
+	% Sub-section heading in Sentence case
+	\subsection{Integrated data hub}
+	AgriSphere integrates all critical data in one place. It combines real-time Mandi prices, weather forecasts, government schemes, and a personal financial ledger. This integration ensures farmers have the complete picture needed for smarter decision-making.
+	
+	% Sub-section heading in Sentence case
+	\subsection{Cloud-based and scalable}
+	Built on the Firebase cloud, the system is highly reliable with automatic data backup and secure storage. The serverless architecture ensures low maintenance needs and provides real-time updates for crucial information like market prices and schemes.
+	
+	\section{Comparative Analysis}
+	\begin{table}[h!]
+		\centering
+		% Caption in Sentence case, no period
+		\caption{Comparison of existing agricultural systems}
+		\label{tab:comparison}
+		% Table with vertical and horizontal lines
+		\begin{tabular}{|l|c|c|c|c|l|l|l|}
+			\hline
+			\textbf{System} & \textbf{Weather Info} & \textbf{Market Prices} & \textbf{Scheme} & \textbf{Voice Support} & \textbf{Language Options} & \textbf{AI/ML} & \textbf{Limitations} \\
+			\hline
+			Kisan Suvidha & \checkmark & \checkmark & \texttimes & \texttimes & 12 & \texttimes & Text-only, limited interactivity \\
+			\hline
+			eNAM & \texttimes & \checkmark & \texttimes & \texttimes & English only & \texttimes & Complex trading interface \\
+			\hline
+			Digital India Agriculture & \checkmark & \texttimes & \checkmark & \texttimes & English & \checkmark & Limited farmer access \\
+			\hline
+			\textbf{AgriSphere (Proposed)} & \checkmark & \checkmark & \checkmark & \checkmark & Telugu, English & Partial (NLP, Translation) & Unified, voice-based multilingual system \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\section{Conclusion}
+	\begin{itemize}
+		\item Farmers gain autonomy in managing agricultural operations digitally.
+		\item The system ensures information transparency and data accuracy.
+		\item Voice-based and multilingual support encourages digital inclusion among non-technical users.
+		\item AgriSphere acts as a bridge between technology and agriculture, fostering smart farming practices.
+	\end{itemize}
+	
+	\clearpage
+	
+	% === CHAPTER 4: SYSTEM ANALYSIS ===
+	\chapter{System Analysis}
+	
+	\section{Problem Definition}
+	Agriculture is the backbone of the Indian economy, employing more than half of the population and contributing significantly to the nation’s GDP. However, despite technological advancements in various sectors, a large portion of Indian farmers—particularly in rural and semi-rural regions—still face challenges due to the lack of access to timely and accurate information. These challenges include unpredictable weather patterns, unstable market prices, limited awareness of government welfare schemes, and inefficient management of their farm-related finances.
+	
+	The majority of existing digital platforms for farmers focus on single domains—such as weather forecasts or market prices—but fail to provide an integrated and localized solution. Furthermore, these applications often operate in English, creating a language barrier for farmers in states like Andhra Pradesh and Telangana, where Telugu is predominantly spoken. The absence of bilingual interfaces and real-time voice-based interaction restricts accessibility to educated users, leaving rural farmers digitally excluded.
+	
+	The problem, therefore, is the absence of a unified, bilingual (English and Telugu) smart assistant that provides farmers with all essential agricultural data—such as mandi prices, government schemes, cooperative sales updates, financial ledgers, and weather forecasts—through an easy-to-use voice-assisted web-application. AgriSphere aims to bridge this gap by creating an interactive, real-time platform that integrates essential agricultural tools with language translation and speech technologies to support even those with limited literacy or technological familiarity.
+	
+	\section{System Requirements}
+	System analysis plays a crucial role in defining the structure and behavior of the system before moving toward implementation. It involves studying both the functional and non-functional aspects that define the user expectations and system behavior. This section outlines the requirements that ensure the application meets its intended goals efficiently and effectively.
+	
+	% Sub-section heading in Sentence case
+	\subsection{Functional requirements}
+	The AgriSphere platform is designed to perform several key functions for two types of users: farmers and administrators. Farmers use the system to interact with agricultural data, while administrators manage the backend and verify content such as government schemes. The system’s primary functional requirements include:
+	
+	\paragraph{User Registration and Authentication:}
+	Each user (farmer or admin) must register and log in using Firebase Authentication. The system ensures secure access with email and password validation. Upon successful login, the user is redirected to their personalized dashboard.
+	
+	\paragraph{Weather Forecasting:}
+	The system retrieves and displays current and 5-day weather forecasts using the OpenWeatherMap API. It automatically detects the user’s geographical location and provides results in both English and Telugu, along with audio narration for easy understanding.
+	
+	\paragraph{Mandi Price Integration:}
+	Farmers can check the latest market (mandi) prices for their crops based on their state or district. The system connects to live government APIs to fetch these prices and displays them in both textual and audible formats.
+	
+	\paragraph{Government Schemes Portal:}
+	A bilingual repository of government schemes is available. Admins can add or modify schemes using a dynamic form, while farmers can access, listen to, and translate them in their preferred language.
+	
+	\paragraph{Cooperative Sales and Finance Ledger:}
+	Farmers can collaboratively log their crop sales and view their income, expenses, and net profit or loss in a simple ledger format. This helps track financial performance over time without manual bookkeeping.
+	
+	\paragraph{Voice Recognition and Speech Assistance:}
+	Using Google Speech APIs, the system supports both speech-to-text (for input fields) and text-to-speech (for reading output). This feature is especially valuable for illiterate users.
+	
+	\paragraph{Admin Panel:}
+	Admins have elevated privileges to manage content, verify schemes, moderate user inputs, and maintain the database integrity.
+	
+	Together, these functionalities create a holistic ecosystem for farmers to access all necessary information in one place, reducing dependency on multiple apps.
+	
+	% Sub-section heading in Sentence case
+	\subsection{Non-functional requirements}
+	Beyond its core features, AgriSphere’s performance, scalability, and reliability are critical. Non-functional requirements ensure the system remains efficient and user-friendly in all environments.
+	
+	\paragraph{Usability:}
+	The system uses a clean, visually rich interface optimized for both mobile and desktop devices. The use of icons and voice cues ensures accessibility even for low-literacy users.
+	
+	\paragraph{Reliability:}
+	The backend runs entirely on Firebase Cloud Infrastructure, providing high data reliability and automatic synchronization. Any data entered by a farmer is stored securely and accessible across devices.
+	
+	\paragraph{Performance:}
+	API calls and database queries are optimized for fast response times, ensuring minimal latency during user interactions, even on low-speed networks common in rural areas.
+	
+	\paragraph{Security:}
+	User authentication is enforced through Firebase, and all communication is encrypted via HTTPS. Role-based access ensures that administrative controls are restricted to authorized personnel only.
+	
+	\paragraph{Maintainability:}
+	Built using modular React components and Firebase’s NoSQL schema, the project is highly maintainable. Updates to one feature do not affect other modules, enabling long-term scalability.
+	
+	% Sub-section heading in Sentence case
+	\subsection{Software requirements}
+	Software requirements describe all the necessary software components, tools, APIs, frameworks, and services needed for the design, development, testing, and deployment of the AgriSphere application. These software elements form the logical and operational foundation on which the system runs. The software stack is carefully chosen to ensure that the application is lightweight, cloud-based, cross-platform, and maintainable while also enabling real-time communication between multiple modules such as weather forecasting, government scheme management, and the financial ledger.
+	
+	\paragraph{Operating System:}
+	The development and deployment of AgriSphere can be performed on any modern operating system. However, the project was designed and tested primarily on Windows 10 and Ubuntu 22.04.
+	\begin{itemize}
+		\item \textbf{Windows 10:} Provides a stable environment for frontend development and compatibility with Firebase CLI and Node.js.
+		\item \textbf{Ubuntu (Linux):} Offers high performance, open-source libraries, and efficient resource management for backend and API operations.
+	\end{itemize}
+	These systems provide a reliable base for running Node.js, Firebase tools, and React development servers.
+	
+	\paragraph{Frontend Framework:}
+	The frontend serves as the visible interface between the farmer and the application.It was developed using React.js -- a widely used JavaScript library for building fast, interactive, and reusable UI components.
+	\begin{itemize}
+		\item \textbf{React.js:} Enables component-based architecture, resulting in modular, reusable, and easily maintainable UI sections (like scheme cards, weather tiles, and dashboards).
+		\item \textbf{TypeScript:} Ensures type safety, prevents runtime errors, and improves code readability for long-term maintainability.
+		\item \textbf{Tailwind CSS:} A utility-first CSS framework for designing responsive and visually consistent layouts that scale across devices -- from desktop screens to low-end mobile devices.
+		\item \textbf{Lucide React Icons:} Provides lightweight SVG icons used in menus, cards, and headers to make the UI visually appealing and intuitive.
+	\end{itemize}
+	
+	\paragraph{Backend (Serverless):}
+	AgriSphere is built using a serverless architecture provided by Google Firebase, eliminating the need for manual server deployment. The backend logic, database management, and hosting are handled entirely through Firebase services.
+	\begin{itemize}
+		\item \textbf{Firebase Authentication:} Manages user sign-up, login, and session handling securely. It supports email-password authentication and can be extended to phone or Google-based login in the future.
+		\item \textbf{Firebase Firestore (Database):} A real-time, NoSQL cloud database that stores data in JSON-like documents. It allows instant synchronization of changes (for example, when a new scheme or transaction is added, all users see the update in real time).
+		\item \textbf{Firebase Storage:} Used for storing and retrieving uploaded images, such as scheme banners, user photos, or document scans.
+		\item \textbf{Firebase Hosting:} Offers fast and secure hosting for the React application. It automatically provisions SSL certificates, ensuring data security over HTTPS.
+		\item \textbf{Firebase Cloud Functions:} Allows small server-side scripts to execute on-demand -- for example, auto-generating summaries, validating input data, or sending notifications to users.
+	\end{itemize}
+	
+	\paragraph{Database:}
+	AgriSphere uses Firebase Firestore as its primary database system. It is a cloud-based, NoSQL database that stores data as key-value pairs in collections and documents. Firestore was chosen for its following advantages:
+	\begin{itemize}
+		\item \textbf{Scalability:} Automatically scales based on the number of users.
+		\item \textbf{Real-time updates:} Enables instant data reflection in all connected devices.
+		\item \textbf{Offline support:} Farmers in remote areas can still access cached data, which automatically syncs once the internet connection is restored.
+		\item \textbf{Security Rules:} Each user can access only their data, managed through Firebase’s inbuilt rule engine.
+	\end{itemize}
+	
+	\paragraph{Third-Party APIs:}
+	The system uses multiple third-party APIs to gather real-time information.
+	\begin{itemize}
+		\item \textbf{OpenWeatherMap API:} Provides 5-day weather forecasts and real-time climate conditions (temperature, humidity, wind speed, etc.) for the farmer’s current or chosen location.
+		\item \textbf{Data.gov.in API (Mandi Prices):} Fetches the daily market prices for major crops from Indian agricultural markets, ensuring authenticity.
+		\item \textbf{Google Cloud Speech API:} Converts spoken Telugu or English input into text (Speech-to-Text) and vice versa (Text-to-Speech). This enables full voice interaction throughout the system.
+		\item \textbf{Google Translate API:} Enables dynamic translation of text fields from English to Telugu and vice versa, supporting bilingual accessibility.
+	\end{itemize}
+	
+	\paragraph{Development Tools:}
+	\begin{itemize}
+		\item \textbf{Visual Studio Code (VS Code):} Used as the primary code editor due to its integrated terminal, debugging tools, and React-specific extensions.
+		\item \textbf{Node.js and npm:} Provides the runtime environment and package manager for installing dependencies and running the React development server.
+		\item \textbf{Git and GitHub:} Used for version control and team collaboration, ensuring that every code change is tracked and maintained.
+		\item \textbf{Browser Developer Tools:} Chrome and Edge DevTools are used to test responsiveness, debug network requests, and ensure accessibility compliance.
+	\end{itemize}
+	
+	\paragraph{Hosting:}
+	AgriSphere is hosted on Firebase Hosting, which offers:
+	\begin{itemize}
+		\item SSL-secured URLs (HTTPS)
+		\item Fast content delivery via CDN (Content Delivery Network)
+		\item Automatic deployment using Firebase CLI
+		\item Simple rollback in case of update failures
+	\end{itemize}
+	This eliminates the need for external hosting providers, ensuring cost efficiency and reliability.
+	
+	% Sub-section heading in Sentence case
+	\subsection{Hardware requirements}
+	Hardware requirements define the physical infrastructure needed to develop, test, and run the AgriSphere application efficiently.Since this project is web-based and hosted in the cloud, the hardware needs are minimal compared to traditional server-based applications.However, sufficient processing power, memory, and network connectivity are essential for ensuring smooth performance and testing during development.
+	
+	\paragraph{Development Environment:}
+	During the development phase, the system must be tested locally before deployment. The development machine should ideally have:
+	\begin{itemize}
+		\item \textbf{Processor:} Intel Core i5 (or equivalent AMD Ryzen 5). Justification: The React development server and Firebase emulator require moderate processing capabilities to compile and render front-end components efficiently.
+		\item \textbf{RAM:} Minimum 8 GB. Justification: To support simultaneous execution of the React build process, database synchronization, and multiple API calls without freezing.
+		\item \textbf{Storage:} 256 GB SSD. Justification: Fast storage helps in quick file compilation, dependency installation, and caching of API results.
+		\item \textbf{Display:} 1080p Full HD Monitor. For clear visibility during design, UI testing, and debugging of interface layouts.
+		\item \textbf{Internet Connectivity:} Stable connection (at least 1 Mbps) required for real-time API data fetch and Firebase sync during development.
+	\end{itemize}
+	
+	\begin{center}
+		\textit{[Figure Placeholder: Developer Workstation Setup Diagram]}
+	\end{center}
+	
+	\paragraph{End-User (Client-Side) Environment:}
+	The deployment environment (Firebase cloud) does not require a physical server. Instead, all operations occur on Google’s cloud infrastructure. However, end users (farmers) and administrators interact through their own devices. Minimum user-side requirements:
+	\begin{itemize}
+		\item \textbf{Device Type:} Smartphone, Tablet, or PC
+		\item \textbf{Operating System:} Android 9.0 or higher, or any desktop OS with Chrome/Edge browser
+		\item \textbf{RAM:} 2 GB minimum for mobile devices
+		\item \textbf{Internet Connection:} 512 Kbps and above (for API-based data fetching)
+		\item \textbf{Microphone Access:} Required for voice input functionality
+		\item \textbf{Speaker Access:} Required for text-to-speech voice output
+	\end{itemize}
+	Even low-end Android phones are capable of accessing AgriSphere, making it feasible for widespread rural adoption.
+	
+	\paragraph{Network Requirements:}
+	The system heavily depends on network connectivity for real-time data synchronization.To ensure reliable communication, the following parameters are considered:
+	\begin{itemize}
+		\item \textbf{Latency:} Must be below 200 ms for a smooth voice interaction experience.
+		\item \textbf{Bandwidth:} A minimum of 500 KB per transaction is needed for weather data and audio playback.
+		\item \textbf{Server Uptime:} Firebase guarantees a 99.9\% uptime SLA, ensuring continuous availability.
+	\end{itemize}
+	
+	\begin{center}
+		\textit{[Figure Placeholder: Cloud Connectivity and Network Diagram]}
+	\end{center}
+	
+	\paragraph{Peripherals:}
+	Certain hardware peripherals enhance the usability and accessibility of the application:
+	\begin{itemize}
+		\item \textbf{Microphone:} Essential for speech recognition and voice-based data entry.
+		\item \textbf{Speaker or Earphones:} Required for audio output of translated or weather-related data.
+		\item \textbf{Touchscreen Input:} Beneficial for older farmers using mobile devices to interact easily with large buttons.
+		\item \textbf{Printer (Optional):} For generating printed reports of the farmer’s financial ledger if needed.
+	\end{itemize}
+	
+	\section{Feasibility Study}
+	A feasibility study is the process of evaluating the practicality and success potential of a system before its actual development. It helps determine whether the proposed project is viable in terms of technology, cost, resources, and user adaptability. In the case of AgriSphere, the feasibility study was conducted to ensure that the project could be implemented effectively using the available tools and resources while meeting the needs of farmers and administrators. The study focuses on three main dimensions -- Technical Feasibility, Economic Feasibility, and Operational Feasibility.
+	
+	% Sub-section heading in Sentence case
+	\subsection{Technical feasibility}
+	\textbf{Result:} Highly Feasible
+	
+	\textbf{Justification:} The system uses a robust, modern, and compatible stack: React.js (Frontend) and Firebase (Backend/Cloud Services), which are all open-source or offer free tiers. This serverless architecture eliminates the need for physical servers, ensures automatic scalability (handling growth from 100 to 10,000 users), provides real-time synchronization via Firestore, and is secured by built-in Firebase Authentication and HTTPS. All core APIs integrate seamlessly, and the cross-platform design allows access from any browser/device.
+	
+	% Sub-section heading in Sentence case
+	\subsection{Economic feasibility}
+	\textbf{Result:} Viable and Cost-Effective
+	
+	\textbf{Justification:} The development cost is minimal due to the reliance on open-source technologies (React, VS Code, Node.js) and the generous free tier of Firebase for hosting and initial database storage. Ongoing operational costs are low, as there is no physical server maintenance or licensing fees. The system offers a high Return on Investment (ROI) by increasing farmer productivity, reducing financial losses from poor decisions, and empowering rural communities with crucial information.
+	
+	% Sub-section heading in Sentence case
+	\subsection{Operational feasibility}
+	\textbf{Result:} Sustainable and User-Acceptable
+	
+	\textbf{Justification:} The system is operationally effective because it is designed specifically for non-technical, rural users. The bilingual interface (Telugu/English), combined with voice-enabled interaction, ensures easy navigation for semi-literate users. The key challenge of limited rural internet is mitigated by Firebase's offline caching support. Minimal training is required, making the system adoption and long-term maintenance highly sustainable.
+	
+	\section{System Objectives and Constraints}
+	
+	% Sub-section heading in Sentence case
+	\subsection{System objectives}
+	The primary goal of AgriSphere is to create a comprehensive, intelligent, and bilingual agricultural platform that assists farmers with information, management, and decision-making support using modern web technologies.The objectives are framed keeping in view the challenges faced by rural farmers, especially those from Telugu-speaking regions, who often struggle with digital literacy and lack access to reliable, real-time data. The core objectives are:
+	\begin{itemize}
+		\item To integrate all vital agricultural data—mandi prices, government schemes, cooperative sales, and real-time weather forecasts—into a single web-application.
+		\item To ensure Data Accuracy and Real-Time Synchronization by using verified third-party APIs and the Firebase real-time database (Firestore).
+		\item To provide a Bilingual User Interface (Telugu and English) using the Google Translate API, ensuring all content is understandable by users with limited English literacy.
+		\item To enable Voice-Enabled Interaction using Google Speech Recognition and Text-to-Speech (TTS) functionalities, making the platform fully usable for illiterate or semi-literate farmers.
+		\item To offer Real-Time Weather Forecasting and Alerts (via OpenWeatherMap API) to help farmers plan activities and minimize losses.
+		\item To provide transparent Mandi Prices and Market Updates to empower farmers in negotiating better prices.
+		\item To facilitate Cooperative Sales and Financial Ledger Management, enabling transparent tracking of income, expenses, and profit for both individual farmers and cooperatives.
+		\item To maintain a Government Scheme Repository with easy-to-access, updated details on welfare schemes.
+		\item To utilize Cloud-Based Accessibility and Scalability via Firebase infrastructure, ensuring 24/7 uptime, universal access, and the ability to easily integrate future modules (a future-ready digital ecosystem).
+		\item To ensure strong Admin Management and Security through Firebase's role-based authentication, logging, and data governance.
+	\end{itemize}
+	
+	% Sub-section heading in Sentence case
+	\subsection{Constraints and dependencies}
+	Despite its advanced features, AgriSphere faces several constraints and dependencies due to practical, environmental, and technical factors. These constraints are acknowledged to plan for future improvements and ensure system reliability.
+	
+	The system faces challenges related to \textbf{Internet Connectivity} in rural areas, where low-speed networks can delay real-time features, despite Firebase's offline caching. It also has \textbf{Hardware and Device Constraints}, as essential voice features require functional microphones and speakers that may not be available on all low-end devices. Furthermore, \textbf{Browser Compatibility} is focused on modern browsers, limiting functionality on older versions.
+	
+	AgriSphere's performance and accuracy are constrained by reliance on \textbf{Third-Party APIs} (for weather, translation, and market data). This presents risks, including potential restricted access if free-tier usage limits are exceeded, requiring premium subscriptions for large-scale operations. Additionally, the system is exposed to the reliability of external sources, facing \textbf{Limited Local Data Sources} if government or weather providers fail to promptly update regional information.
+	
+	The multilingual features face \textbf{Language and Accent Constraints}, as regional dialect variations may lead to misinterpretation by the Google Speech API, requiring continuous fine-tuning. \textbf{Maintenance and API Key Management} pose a periodic risk, as key expiration or quota abuse can temporarily disrupt core services like voice recognition or weather fetching.
+	
+	While Firebase offers security, the system must maintain strict adherence to \textbf{Security and Privacy Constraints} concerning sensitive data stored in the cloud, requiring proper database rules and compliance with emerging privacy laws. Finally, \textbf{Human Resource and Training Limitations} mean that while the app is intuitive, large-scale adoption may still necessitate periodic training sessions for first-time users.
+	
+	\section{Conclusion}
+	This chapter analyzed AgriSphere from an engineering perspective, focusing on problem definition, system requirements, feasibility, and design objectives.It established that AgriSphere is both feasible and sustainable, combining a multilingual interface, voice support, and real-time cloud integration to address core agricultural challenges. The system objectives highlighted how the platform empowers farmers by providing timely, accessible information, while the constraints identified current practical limitations like network dependency and API restrictions.Together, these insights form the foundation for the System Design Phase, where these objectives are transformed into structured architectures, data flow models, and UML diagrams.
+	
+	\clearpage
+	
+	% === CHAPTER 5: SYSTEM DESIGN ===
+	\chapter{System Design}
+	
+	System design is the process of translating the analyzed requirements into a structured model that defines the architecture, data flow, modules, and user interactions of the proposed system.The design phase ensures that the system functions cohesively and efficiently while remaining scalable, maintainable, and secure. AgriSphere’s system design emphasizes modularity, usability, and real-time data processing through Firebase Cloud, React-based frontend, and integrated API services.
+	
+	\section{System Architecture}
+	The AgriSphere architecture is a multi-layered client–cloud architecture that enables farmers, administrators, and public users to interact seamlessly. The architecture consists of four primary layers:
+	
+	% Sub-section heading in Sentence case
+	\subsection{Presentation layer (frontend UI)}
+	Built using React.js and Tailwind CSS.
+	\begin{itemize}
+		\item Provides user interfaces for login, weather, schemes, financial ledger, and cooperative sales.
+		\item Integrates Google Voice APIs for speech-based interactions and bilingual display.
+	\end{itemize}
+	
+	% Sub-section heading in Sentence case
+	\subsection{Application logic layer (middleware)}
+	\begin{itemize}
+		\item Handles all processing, logic, and data transformation between the frontend and backend.
+		\item Facilitates communication with Firebase through REST APIs.
+		\item Includes logic for translation, voice synthesis, and data validation.
+	\end{itemize}
+	
+	% Sub-section heading in Sentence case
+	\subsection{Database layer (backend storage)}
+	\begin{itemize}
+		\item Uses Firebase Firestore for real-time cloud data storage.
+		\item Contains collections for users, government schemes, cooperative sales, financial transactions, and system logs.
+		\item Ensures role-based data access and synchronization.
+	\end{itemize}
+	
+	% Sub-section heading in Sentence case
+	\subsection{External services layer (APIs)}
+	\begin{itemize}
+		\item Includes third-party APIs like OpenWeatherMap (for weather), Google Translate (for multilingual text), and Speech-to-Text APIs.
+		\item These enhance system functionality and provide live, contextual data to the users.
+	\end{itemize}
+	
+	% Sub-section heading in Sentence case
+	\subsection{System architecture diagram}
+	A Software Architecture Diagram is a visual blueprint of a system, showing its structure, components, and how they interact and exchange data. It acts as a map for everyone involved in the project.Architectural diagrams are crucial across the entire lifecycle of a software project, serving as the central source of truth for all stakeholders. The AgriSphere architectural diagram effectively communicates its core identity as a multi-modal, cloud-native agricultural assistance platform.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=\textwidth]{architecture_diagram.png}
+		% Caption in Sentence case, with a period at the end
+		\caption{System architecture diagram.}
+		\label{fig:arch_diag}
+	\end{figure}
+	
+	\paragraph{Description:}
+	\begin{itemize}
+		\item The user interacts through the browser (React Frontend).
+		\item Input is either text-based or voice-based.
+		\item The frontend communicates with Firebase through secure HTTPS requests.
+		\item Firestore processes or retrieves data (like schemes, prices, or sales records).
+		\item The external APIs are called when live weather or translation data is required.
+		\item Processed information is sent back to the frontend and displayed or spoken aloud.
+	\end{itemize}
+	
+	\clearpage
+	
+	% === CHAPTER 6: CONCLUSIONS AND FUTURE WORKS ===
+	\chapter{Conclusions and Future Works}
+	
+	\section{Conclusions}
+	% ... (Content for this section would go here) ...
+	This project successfully designed and detailed the architecture for AgriSphere, a comprehensive digital assistant for farmers. The system addresses key challenges in Indian agriculture, namely information fragmentation, language barriers, and digital illiteracy, by providing a unified, bilingual, and voice-interactive platform.
+	
+	The system's design, centered on a React.js frontend and a serverless Firebase backend, is proven to be technically feasible, economically viable, and operationally sustainable for a rural user base. By integrating real-time weather, mandi prices, and government schemes, the platform empowers farmers to make informed decisions, thereby enhancing productivity and transparency.
+	
+	\section{Future Works}
+	The modular design of AgriSphere allows for significant future expansion. Based on the literature review and system design, future work could focus on the following areas:
+	\begin{itemize}
+		\item \textbf{AI-Driven Crop Diagnosis:} Integrating a machine learning module, as reviewed in the literature \cite{mehta2021}, where farmers can upload images of crops to receive instant disease diagnosis and treatment recommendations.
+		\item \textbf{IoT Sensor Integration:} Expanding the platform to receive real-time data from on-field IoT sensors for soil moisture, temperature, and nutrient levels, enabling precision agriculture.
+		\item \textbf{Advanced Predictive Analytics:} Using historical weather and market data to build predictive models for crop yield and price forecasting, offering farmers greater insight for planning.
+		\item \textbf{Offline-First Functionality:} Enhancing the Firebase offline caching to ensure that all critical features are available even with intermittent or no internet connectivity, a common issue in rural regions.
+	\end{itemize}
+	
+	
+	\clearpage
+	
+	% === REFERENCES ===
+	% Format: Numbered, alphabetical
+	\chapter*{References}
+	\addcontentsline{toc}{chapter}{References}
+	
+	\begin{thebibliography}{9}
+		
+		\bibitem{ashwini2022}
+		Ashwini, P. (2022). Farmers' awareness of digital agricultural schemes in Telangana. \textit{CAB International Digital Library – Journal of Agricultural Extension}.
+		
+		\bibitem{kumar2021}
+		Kumar, A. and Patel, S. (2021). Multilingual chatbots for agricultural assistance. \textit{Journal of Natural Language Processing and Applications}, 12(1): 45-58.
+		
+		\bibitem{mehta2021}
+		Mehta, R., \& Banerjee, S. (2021). AI-Driven plant disease diagnosis. \textit{Journal of Agricultural Informatics and Intelligent Systems}, 9(2): 112-125.
+		
+	%	[cite_start]% --- Examples from guidelines [cite: 619-655] ---
+		
+		\bibitem{dozier1992}
+		Dozier, J. (1992). Opportunities to improve hydrologic data. \textit{Reviews of Geophysics}, 30(4): 315-331.
+		
+		\bibitem{anderson1992}
+		Anderson, M.P. and Woessner, W.W. (1992). \textit{Applied Groundwater Modeling}. Academic Press, San Diego, 381 pp.
+		
+		\bibitem{ipcc2001}
+		IPCC (2001). Third Assessment Report: Climate Change 2001. Intergovernmental Panel on Climate Change (IPCC), Geneva, Switzerland, http://www.ipcc.ch (accessed in March 2005).
+		
+		\bibitem{schultz1993}
+		Schultz, G.A. (1993). Application of GIS and Remote Sensing in Hydrology. In: K. Kovar and H.P. Nachtnebel (editors), \textit{Application of Geographic Information Systems in Hydrology and Water Resources Management}, IAHS Publication No. 211, IAHS Press, Wallingford, pp. 127-140.
+		
+	\end{thebibliography}
+	
+\end{document}

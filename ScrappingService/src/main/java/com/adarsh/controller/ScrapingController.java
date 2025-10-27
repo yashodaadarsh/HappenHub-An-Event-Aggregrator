@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/data")
+@RequestMapping("scrapping-service/api/v1/data")
+@CrossOrigin(origins = "*")
 public class ScrapingController {
 
     @Autowired

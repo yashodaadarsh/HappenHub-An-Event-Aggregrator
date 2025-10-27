@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.adarsh</groupId>
-	<artifactId>wishlist</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>wishlist_service</artifactId>
+	<version>v1.0.1-8086</version>
 	<name>wishlist</name>
 	<description>wishlist service</description>
 	<url/>
@@ -67,10 +67,12 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <version>1.18.30</version>
+            <scope>provided</scope>
         </dependency>
 
-	</dependencies>
+
+    </dependencies>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

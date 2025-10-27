@@ -13,6 +13,7 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("wishlist-service/api/v1/wishlist")
+@CrossOrigin(origins = "*")
 public class WishListController {
 
     @Autowired

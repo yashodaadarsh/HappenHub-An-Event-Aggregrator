@@ -55,13 +55,13 @@ class LLMService:
             "current_date": current_date
         }
 
-        print("Invoking LLM with message:", payload)
+        print("\nInvoking LLM with message:", payload)
         try:
             ans = self.runnable.invoke(payload)
 
 
 
-            print("Raw LLM response:", ans)
+            print("\nRaw LLM response:", ans)
         except Exception as e:
             print("Error invoking LLM:", e)
             raise
