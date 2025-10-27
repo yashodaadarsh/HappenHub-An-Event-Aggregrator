@@ -270,3 +270,6 @@ DsService/src/.env
 
 #frontend
 HappenHub_FrontEnd/node_modules
+
+#jars
+jars/.
