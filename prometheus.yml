@@ -26,15 +26,15 @@ scrape_configs:
     # Use the service names defined in docker-compose, not host IP addresses.
     # Since all services are on the 'arpanet' network, you must use their service names.
     static_configs:
-      - targets: ['10.255.76.247:8080']
-      - targets: ['10.255.76.247:8081']
-      - targets: ['10.255.76.247:8083']
+      - targets: ['host.docker.internal:8080']
+      - targets: ['host.docker.internal:8081']
+      - targets: ['host.docker.internal:8083']
       # The targets here should be the service name:port, assuming you've given your 
       # microservice containers unique service names like 'auth-service', 'user-service', etc.
       # If all your services are on the same port, you MUST give them different service names.
 
   # 3. Scrape Kafka Exporter
-  - job_name: 'kafka'
-    static_configs:
+  #- job_name: 'kafka'
+   # static_configs:
       # Use the service name defined in docker-compose.
-      - targets: ['kafka-exporter:9308']
+    #  - targets: ['kafka-exporter:9308']

@@ -1,3 +1,10 @@
+EventIngestionService/
+.idea/
+Documentation/
+jar/
+/logos
+
+
 AuthService/HELP.md
 AuthService/.gradle
 AuthService/.idea
